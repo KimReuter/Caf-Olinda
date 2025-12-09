@@ -27,7 +27,7 @@ The website serves as a strategic brand touchpoint, enabling visitors to explore
 
 ---
 
-## 🎯 Key Objectives
+## 🎯 Key Objectives <a id="key-objectives"></a>
 
 - Deliver a **mobile-first, high-performance** digital experience.  
 - Showcase the café’s **brand identity, values, and atmosphere**.  
@@ -36,7 +36,7 @@ The website serves as a strategic brand touchpoint, enabling visitors to explore
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack <a id="tech-stack"></a>
 
 - **Next.js** – React framework for modern, high-performing web apps  
 - **TypeScript** – Strong typing for scalable and maintainable code  
@@ -46,7 +46,7 @@ The website serves as a strategic brand touchpoint, enabling visitors to explore
 
 ---
 
-## ✨ Features
+## ✨ Features <a id="features"></a>
 
 - Responsive, mobile-first UI  
 - Brand-centric design reflecting Café Olinda’s cozy, retro vibe  
@@ -55,7 +55,7 @@ The website serves as a strategic brand touchpoint, enabling visitors to explore
 - Optimized asset handling and image performance  
 - Ready for SEO and accessibility enhancements  
 
-## 📁 Project Structure
+## 📁 Project Structure <a id="project-structure"></a>
 
 The following structure outlines the planned architecture for the Café Olinda web platform:
 
@@ -81,7 +81,7 @@ olinda-website/
 
 ---
 
-## 🚀 Setup & Installation
+## 🚀 Setup & Installation <a id="setup--installation"></a>
 
 These steps ensure a smooth developer experience and a consistent environment when working on the project.
 
@@ -92,7 +92,7 @@ npm install
 
 ---
 
-## 🗺 Roadmap
+## 🗺 Roadmap <a id="roadmap"></a>
 
 **Phase 1 – Foundation**  
 - Initialize Next.js project  
@@ -116,14 +116,14 @@ npm install
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributing <a id="contributing"></a>
 
 Contributions, feedback, and ideas are welcome.  
 Please open an issue or submit a pull request before making major changes.
 
 ---
 
-## 📄 License
+## 📄 License <a id="license"></a>
 
 No license has been added at this time.  
 All rights reserved until a specific license is included.
