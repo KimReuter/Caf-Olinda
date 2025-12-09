@@ -19,7 +19,7 @@ This project aims to translate that unique spirit into a digital platform that e
 
 ---
 
-## 🌿 Project Overview
+## 🌿 Project Overview <a id="project-overview"></a>
 
 Café Olinda is more than a café — it is a **community hub** that blends comfort, creativity, and culinary quality. The mission of this web project is to capture the café’s warm retro aesthetic, its commitment to plant-based cuisine, and its collaborative work culture.  
 
