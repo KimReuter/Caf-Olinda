@@ -1,3 +1,11 @@
+export type CalloutPoint = {
+  label: string;
+  fromX: number;
+  fromY: number;
+  toX: number;
+  toY: number;
+};
+
 export type MenuCategory =
   | 'heiss'
   | 'cold-kaffee'
@@ -13,6 +21,8 @@ export type MenuItem = {
   priceAlt?: number;   // Alternativpreis (größere Größe), optional
   category: MenuCategory;
   imageSrc?: string;
+  isSignature?: boolean;
+  callouts?: CalloutPoint[];
 };
 
 export const categoryLabels: Record<MenuCategory, string> = {
