@@ -1,0 +1,56 @@
+.menu-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Normale Karte */
+.menu-card:not(.menu-card--signature) .menu-card__info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid rgba(26, 26, 24, 0.08);
+}
+
+/* Signature-Karte */
+.menu-card--signature {
+  gap: var(--space-md);
+}
+
+.menu-card--signature .menu-card__info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+/* Name */
+.menu-card__name {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.menu-card__name--serif {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  letter-spacing: -0.01em;
+}
+
+/* Preis */
+.menu-card__price {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu-card__price::after {
+  content: ' €';
+  font-size: 0.75em;
+  opacity: 0.7;
+}
