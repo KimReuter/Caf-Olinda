@@ -1,40 +1,51 @@
 :root {
-  /* Farben */
+  /* ─── Farben ────────────────────────────────── */
   --color-bg:      #F7F4EF;
   --color-text:    #1A1A18;
   --color-accent:  #314753;
   --color-muted:   #8A8780;
 
-  /* Typografie */
+  /* ─── Fonts ─────────────────────────────────── */
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'DM Sans', system-ui, sans-serif;
 
-  /* Schriftgrößen */
-  --text-xs:   0.75rem;    /* 12px */
-  --text-sm:   0.875rem;   /* 14px */
-  --text-base: 1rem;       /* 16px */
-  --text-md:   1.125rem;   /* 18px */
-  --text-lg:   1.375rem;   /* 22px */
-  --text-xl:   1.75rem;    /* 28px */
-  --text-2xl:  2.5rem;     /* 40px */
-  --text-3xl:  3.5rem;     /* 56px */
-  --text-4xl:  5rem;       /* 80px */
+  /* ─── Typografie-Skala ───────────────────────── */
+  /* Display – Hero-Headlines, mutig groß */
+  --text-display:  clamp(4rem, 10vw, 7.5rem);   /* 64px → 120px */
+  /* Headline – Sektionsüberschriften */
+  --text-headline: clamp(2.25rem, 5vw, 4rem);   /* 36px → 64px */
+  /* Body – Fließtext */
+  --text-body:     1.0625rem;                   /* 17px */
+  /* Small – Navigation, Labels */
+  --text-small:    0.8125rem;                   /* 13px */
 
-  /* Spacing */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  2rem;
-  --space-lg:  4rem;
-  --space-xl:  8rem;
-  --space-2xl: 12rem;
+  /* Legacy-Tokens (backward compat) */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.125rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  2.5rem;
+  --text-3xl:  3.5rem;
+  --text-4xl:  5rem;
 
-  /* Layout */
+  /* ─── Spacing ────────────────────────────────── */
+  --space-xs:  0.5rem;    /*  8px */
+  --space-sm:  1rem;      /* 16px */
+  --space-md:  2rem;      /* 32px */
+  --space-lg:  5rem;      /* 80px */
+  --space-xl:  10rem;     /* 160px */
+  --space-2xl: 14rem;     /* 224px */
+
+  /* ─── Layout ─────────────────────────────────── */
   --max-width: 1100px;
   --nav-height: 72px;
 
-  /* Übergänge */
-  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --duration-slow: 800ms;
-  --duration-medium: 500ms;
-  --duration-fast: 280ms;
+  /* ─── Übergänge ──────────────────────────────── */
+  --ease-quiet:    cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out-soft: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --duration-slow:   900ms;
+  --duration-medium: 600ms;
+  --duration-fast:   280ms;
 }

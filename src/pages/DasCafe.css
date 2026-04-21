@@ -1,40 +1,42 @@
-.das-cafe {
-  padding: var(--space-xl) var(--space-md);
-  min-height: calc(100dvh - var(--nav-height));
-  display: flex;
-  align-items: center;
-}
-
-.das-cafe__inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  width: 100%;
+/* ─── Hero: 2-Spalten, Bild blutet nach rechts ── */
+.das-cafe__hero {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--space-xl);
-  align-items: start;
+  grid-template-columns: 42% 1fr;
+  min-height: calc(100dvh - var(--nav-height));
+  overflow: hidden;
 }
 
-/* Header */
-.das-cafe__header {
-  position: sticky;
-  top: calc(var(--nav-height) + var(--space-lg));
+/* Linke Textspalte – Padding fluchtet mit globalem Content */
+.das-cafe__hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-md) var(--space-xl)
+    max(var(--space-md), calc((100vw - var(--max-width)) / 2 + var(--space-md)));
 }
 
-.das-cafe__heading {
+/* ─── Display-Headline (zeilenweise) ─────────── */
+.das-cafe__display-line {
+  display: block;
   font-family: var(--font-serif);
-  font-size: var(--text-3xl);
+  font-size: var(--text-display);
   font-weight: 400;
-  color: var(--color-text);
+  line-height: 0.95;
   letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.das-cafe__display-line em,
+em.das-cafe__display-line {
+  font-style: italic;
+  color: var(--color-accent);
 }
 
 .das-cafe__divider {
   width: 32px;
   height: 1px;
   background-color: var(--color-accent);
+  margin: var(--space-md) 0;
   opacity: 0;
   transition: opacity var(--duration-slow) var(--ease-quiet) 200ms;
 }
@@ -43,42 +45,99 @@
   opacity: 0.6;
 }
 
-/* Text-Block */
-.das-cafe__text {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  padding-top: var(--space-xs);
+/* ─── Rechtes Bild – blutet zum rechten Rand ─── */
+.das-cafe__hero-image {
+  overflow: hidden;
+  background-color: rgba(49, 71, 83, 0.07);
+  position: relative;
 }
 
-.das-cafe__line {
+.das-cafe__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
-  font-weight: 400;
-  line-height: 1.35;
-  color: var(--color-text);
-  letter-spacing: -0.01em;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
-  .das-cafe__inner {
+/* ─── Body-Bereich (unterhalb des Heroes) ────── */
+.das-cafe__body {
+  padding: var(--space-xl) var(--space-md);
+}
+
+.das-cafe__body-inner {
+  max-width: 560px;
+  margin-left: max(var(--space-md), calc((100vw - var(--max-width)) / 2 + var(--space-md)));
+}
+
+/* Intro – Cormorant Italic, groß */
+.das-cafe__intro {
+  font-family: var(--font-serif);
+  font-size: var(--text-headline);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+/* Body – DM Sans */
+.das-cafe__body-line {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+/* Trennlinie vor praktischen Hinweisen */
+.das-cafe__practical-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(26, 26, 24, 0.08);
+  margin: var(--space-md) 0;
+}
+
+/* Praktische Hinweise – klein, gedämpft */
+.das-cafe__practical-line {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-xs);
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+  .das-cafe__hero {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    min-height: auto;
   }
 
-  .das-cafe__header {
-    position: static;
+  .das-cafe__hero-image {
+    aspect-ratio: 3 / 2;
+    order: -1; /* Bild zuerst auf Mobile */
   }
 
-  .das-cafe__heading {
-    font-size: var(--text-2xl);
+  .das-cafe__hero-text {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .das-cafe__display-line {
+    font-size: clamp(var(--text-3xl), 12vw, var(--text-display));
   }
 }
 
 @media (max-width: 640px) {
-  .das-cafe {
+  .das-cafe__body-inner {
+    margin-left: 0;
+    max-width: none;
+  }
+
+  .das-cafe__body {
     padding: var(--space-lg) var(--space-md);
   }
 }

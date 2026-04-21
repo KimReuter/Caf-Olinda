@@ -13,6 +13,21 @@
 }
 
 /* ─────────────────────────────────────────
+   Headline-Zeile enthüllen (overflow: hidden
+   auf dem Wrapper)
+   ───────────────────────────────────────── */
+@keyframes fadeUpLine {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─────────────────────────────────────────
    Fade-In ohne Bewegung
    ───────────────────────────────────────── */
 @keyframes fadeIn {
@@ -37,8 +52,8 @@
   opacity: 0;
   transform: translateY(16px);
   transition:
-    opacity var(--duration-slow) var(--ease-quiet),
-    transform var(--duration-slow) var(--ease-quiet);
+    opacity var(--duration-slow) var(--ease-out-soft),
+    transform var(--duration-slow) var(--ease-out-soft);
 }
 
 .fade-up.is-visible {
@@ -56,17 +71,49 @@
 /* Reiner Fade ohne Bewegung */
 .fade-in {
   opacity: 0;
-  transition: opacity var(--duration-slow) var(--ease-quiet);
+  transition: opacity var(--duration-slow) var(--ease-out-soft);
 }
 
 .fade-in.is-visible {
   opacity: 1;
 }
 
+/* ─────────────────────────────────────────
+   Headline-Zeilen-Wrapper
+   ───────────────────────────────────────── */
+.line-wrap {
+  overflow: hidden;
+  padding-bottom: 0.06em; /* verhindert Abschneiden von Unterlängen */
+}
+
+.line-wrap > * {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out-soft),
+    transform var(--duration-slow) var(--ease-out-soft);
+}
+
+.line-wrap > *.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────
+   Link-Hover (global)
+   ───────────────────────────────────────── */
+a {
+  transition:
+    letter-spacing var(--duration-medium) var(--ease-quiet),
+    opacity var(--duration-medium) var(--ease-quiet);
+}
+
 /* prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   .fade-up,
-  .fade-in {
+  .fade-in,
+  .line-wrap > * {
     opacity: 1;
     transform: none;
     transition: none;

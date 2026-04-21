@@ -9,13 +9,14 @@
 
 /* ─── Heading ────────────────────────────── */
 .speisekarte__header {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 .speisekarte__heading {
   font-family: var(--font-serif);
-  font-size: var(--text-3xl);
+  font-size: var(--text-headline);
   font-weight: 400;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
