@@ -7,14 +7,16 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Menü schließen bei Routenwechsel
+  // Menü schließen & Scrolled-State korrekt setzen bei Routenwechsel
   useEffect(() => {
     setMenuOpen(false);
+    setScrolled(window.scrollY > 40);
   }, [location.pathname]);
 
-  // Subtiler Scroll-Schatten
+  // Scroll-Hintergrund
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

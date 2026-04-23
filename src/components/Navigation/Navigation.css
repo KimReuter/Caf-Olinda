@@ -6,12 +6,14 @@
   z-index: 100;
   height: var(--nav-height);
   padding: 0 var(--space-md);
-  background-color: var(--color-bg);
-  transition: box-shadow var(--duration-medium) var(--ease-quiet);
+  background-color: transparent;
+  transition:
+    background-color var(--duration-medium) var(--ease-quiet),
+    box-shadow var(--duration-medium) var(--ease-quiet);
 }
 
 .nav--scrolled {
-  box-shadow: 0 1px 0 rgba(26, 26, 24, 0.08);
+  background-color: var(--color-bg);
 }
 
 .nav__inner {

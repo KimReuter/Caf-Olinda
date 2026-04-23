@@ -3,23 +3,6 @@ import { Layout } from '../components/Layout/Layout';
 import { useInView } from '../hooks/useInView';
 import './DasCafe.css';
 
-// ─── Zeilenweise Headline-Animation ──────────────────
-function HeadlineLine({ children, visible, delay = 0, italic = false }: {
-  children: React.ReactNode;
-  visible: boolean;
-  delay?: number;
-  italic?: boolean;
-}) {
-  return (
-    <div className="line-wrap">
-      {italic
-        ? <em className={`das-cafe__display-line${visible ? ' is-visible' : ''}`} style={{ transitionDelay: `${delay}ms` }}>{children}</em>
-        : <span className={`das-cafe__display-line${visible ? ' is-visible' : ''}`} style={{ transitionDelay: `${delay}ms` }}>{children}</span>
-      }
-    </div>
-  );
-}
-
 // ─── Einfache Body-Textzeile ──────────────────────────
 function BodyLine({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const { ref, isVisible } = useInView<HTMLParagraphElement>(0.15);
@@ -49,33 +32,33 @@ function PracticalLine({ children, delay = 0 }: { children: React.ReactNode; del
 }
 
 export function DasCafe() {
-  const [line1, setLine1] = useState(false);
-  const [line2, setLine2] = useState(false);
-  const [line3, setLine3] = useState(false);
-  const { ref: dividerRef, isVisible: dividerVisible } = useInView<HTMLDivElement>(0.3);
+  const [labelVisible, setLabelVisible] = useState(false);
+  const [nameVisible, setNameVisible] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setLine1(true), 200);
-    const t2 = setTimeout(() => setLine2(true), 480);
-    const t3 = setTimeout(() => setLine3(true), 720);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+    const t1 = setTimeout(() => setLabelVisible(true), 300);
+    const t2 = setTimeout(() => setNameVisible(true), 600);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
   return (
     <Layout>
       <div className="das-cafe">
 
-        {/* ─── Hero: Text links / Bild blutet nach rechts ─── */}
+        {/* ─── Hero: Text links / Bild blutet nach rechts bis ganz oben ─── */}
         <div className="das-cafe__hero">
           <div className="das-cafe__hero-text">
-            <HeadlineLine visible={line1} delay={0}>Das</HeadlineLine>
-            <HeadlineLine visible={line2} delay={0} italic>Café</HeadlineLine>
-            <div
-              ref={dividerRef}
-              className={`das-cafe__divider fade-in${dividerVisible ? ' is-visible' : ''}`}
-              aria-hidden="true"
-            />
-            <HeadlineLine visible={line3} delay={0}>Olinda.</HeadlineLine>
+            {/* Klein: "das café" als Label */}
+            <span className={`das-cafe__label fade-in${labelVisible ? ' is-visible' : ''}`}>
+              das café
+            </span>
+
+            {/* Riesig: "Olinda." */}
+            <div className="line-wrap das-cafe__name-wrap">
+              <span className={`das-cafe__name${nameVisible ? ' is-visible' : ''}`}>
+                Olinda.
+              </span>
+            </div>
           </div>
 
           <div className="das-cafe__hero-image" aria-hidden="true">
