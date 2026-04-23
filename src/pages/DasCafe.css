@@ -147,10 +147,6 @@
     max-width: none;
   }
 
-  .das-cafe__body-line,
-  .das-cafe__practical-line {
-    text-align: left;
-  }
 }
 
 @media (max-width: 640px) {
