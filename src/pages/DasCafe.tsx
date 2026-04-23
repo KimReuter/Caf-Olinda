@@ -92,13 +92,13 @@ export function DasCafe() {
             <div className="das-cafe__practical-divider" aria-hidden="true" />
 
             <PracticalLine delay={0}>
-              — Vegetarisch &amp; vegan. Ohne Ausnahme.
+              · Vegetarisch &amp; vegan. Ohne Ausnahme.
             </PracticalLine>
             <PracticalLine delay={80}>
-              — Keine Reservierung. Einfach reinkommen.
+              · Keine Reservierung. Einfach reinkommen.
             </PracticalLine>
             <PracticalLine delay={160}>
-              — Kein Catering. Wir bleiben, wo wir sind.
+              · Kein Catering. Wir bleiben, wo wir sind.
             </PracticalLine>
           </div>
         </div>
