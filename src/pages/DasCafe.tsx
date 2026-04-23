@@ -33,12 +33,10 @@ function PracticalLine({ children, delay = 0 }: { children: React.ReactNode; del
 
 export function DasCafe() {
   const [labelVisible, setLabelVisible] = useState(false);
-  const [nameVisible, setNameVisible] = useState(false);
 
   useEffect(() => {
     const t1 = setTimeout(() => setLabelVisible(true), 300);
-    const t2 = setTimeout(() => setNameVisible(true), 600);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    return () => { clearTimeout(t1); };
   }, []);
 
   return (
@@ -53,10 +51,18 @@ export function DasCafe() {
               das café
             </span>
 
-            {/* Riesig: "Olinda." */}
-            <div className="line-wrap das-cafe__name-wrap">
-              <span className={`das-cafe__name${nameVisible ? ' is-visible' : ''}`}>
-                Olinda.
+            {/* Riesig: "Olinda." – Buchstaben erscheinen nacheinander */}
+            <div className="das-cafe__name-wrap">
+              <span className="das-cafe__name" aria-label="Olinda.">
+                {[...'Olinda.'].map((letter, i) => (
+                  <span
+                    key={i}
+                    className="das-cafe__name-letter"
+                    style={{ animationDelay: `${500 + i * 70}ms` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
               </span>
             </div>
           </div>
