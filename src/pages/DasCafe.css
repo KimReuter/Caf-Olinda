@@ -157,16 +157,24 @@
     max-width: none;
   }
 
-  /* Mobile: Punkte durch Trennlinien ersetzen */
-  .das-cafe__practical-line {
-    padding-left: 0;
-    padding-top: var(--space-xs);
-    border-top: 1px solid rgba(26, 26, 24, 0.1);
-    margin-bottom: var(--space-sm);
+  /* Mobile: Card-Kasten für Stichpunkte */
+  .das-cafe__practical-group {
+    background: rgba(49, 71, 83, 0.06);
+    border-radius: 3px;
+    padding: var(--space-md);
+    margin-top: var(--space-sm);
   }
 
-  .das-cafe__practical-line::before {
-    display: none;
+  .das-cafe__practical-line {
+    padding-left: 1.4em;
+    padding-top: 0;
+    border-top: none;
+    margin-bottom: var(--space-xs);
+    text-align: left;
+  }
+
+  .das-cafe__practical-line:last-child {
+    margin-bottom: 0;
   }
 
 }
