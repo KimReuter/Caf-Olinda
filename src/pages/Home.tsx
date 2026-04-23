@@ -40,6 +40,9 @@ export function Home() {
           />
           <div className="home__overlay" aria-hidden="true" />
 
+          {/* Kleines Gegengewicht oben rechts */}
+          <span className="home__location" aria-hidden="true">Plauen · Vogtland</span>
+
           <div className="home__headline">
             <div className="line-wrap">
               <span className={line1 ? 'is-visible' : ''}>Ein kleiner Ort.</span>

@@ -10,6 +10,7 @@
 /* ─── Heading ────────────────────────────── */
 .speisekarte__header {
   margin-bottom: var(--space-lg);
+  text-align: right;
 }
 
 .speisekarte__heading {

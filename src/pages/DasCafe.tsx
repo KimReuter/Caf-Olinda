@@ -58,7 +58,7 @@ export function DasCafe() {
                   <span
                     key={i}
                     className="das-cafe__name-letter"
-                    style={{ animationDelay: `${500 + i * 70}ms` }}
+                    style={{ animationDelay: `${400 + i * 110}ms` }}
                   >
                     {letter}
                   </span>
