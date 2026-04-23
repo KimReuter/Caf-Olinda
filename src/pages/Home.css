@@ -7,7 +7,8 @@
 .home__hero {
   position: relative;
   flex: 1;
-  min-height: calc(100dvh - var(--nav-height));
+  min-height: 100dvh;
+  margin-top: calc(-1 * var(--nav-height));
   overflow: hidden;
   display: flex;
   align-items: flex-end;
@@ -41,6 +42,20 @@
     rgba(26, 26, 24, 0.2) 45%,
     transparent 72%
   );
+}
+
+/* ─── Gegengewicht oben rechts ───────────────── */
+.home__location {
+  position: absolute;
+  top: calc(var(--nav-height) + var(--space-md));
+  right: var(--space-lg);
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  letter-spacing: 0.12em;
+  color: rgba(247, 244, 239, 0.45);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
 /* ─── Zeilenweise Display-Headline ────────────── */
