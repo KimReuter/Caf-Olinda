@@ -110,8 +110,18 @@
   letter-spacing: 0.02em;
   margin-bottom: var(--space-xs);
   max-width: none;
-  padding-left: 1em;
-  text-indent: -1em;
+  padding-left: 1.4em;
+  position: relative;
+}
+
+.das-cafe__practical-line::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-size: 1.4em;
+  line-height: 1.45;
+  color: var(--color-text);
+  opacity: 0.75;
 }
 
 /* ─── Responsive ─────────────────────────────── */
