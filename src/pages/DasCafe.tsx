@@ -92,13 +92,13 @@ export function DasCafe() {
             <div className="das-cafe__practical-divider" aria-hidden="true" />
 
             <PracticalLine delay={0}>
-              Alles auf der Karte ist vegetarisch oder vegan.
+              — Vegetarisch &amp; vegan. Ohne Ausnahme.
             </PracticalLine>
             <PracticalLine delay={80}>
-              Reservierung nicht möglich – man kommt vorbei und schaut ob was frei ist.
+              — Keine Reservierung. Einfach reinkommen.
             </PracticalLine>
             <PracticalLine delay={160}>
-              Das Olinda bleibt, wo es ist – und deshalb bieten wir kein Catering an.
+              — Kein Catering. Wir bleiben, wo wir sind.
             </PracticalLine>
           </div>
         </div>

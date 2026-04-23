@@ -109,8 +109,9 @@
   color: var(--color-muted);
   letter-spacing: 0.02em;
   margin-bottom: var(--space-xs);
-  text-align: justify;
   max-width: none;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
 }
 
 /* ─── Responsive ─────────────────────────────── */
