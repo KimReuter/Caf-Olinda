@@ -92,12 +92,23 @@
   max-width: none;
 }
 
-/* Trennlinie */
+/* Trennlinie – Grid-Spalte 2 */
 .das-cafe__practical-divider {
+  grid-column: 2;
   width: 100%;
   height: 1px;
   background-color: rgba(26, 26, 24, 0.08);
   margin: var(--space-md) 0;
+}
+
+/* Stichpunkte-Gruppe – 3 Spalten, volle Breite der rechten Spalte */
+.das-cafe__practical-group {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  padding-bottom: var(--space-xl);
+  align-items: start;
 }
 
 /* Praktische Hinweise */
@@ -108,21 +119,30 @@
   line-height: 1.7;
   color: var(--color-muted);
   letter-spacing: 0.02em;
-  margin-bottom: var(--space-xs);
   max-width: none;
-  padding-left: 1.4em;
+  padding-left: 0;
+  padding-top: 3.5rem;
   position: relative;
 }
 
+/* Große blasse Ordnungszahl */
 .das-cafe__practical-line::before {
-  content: '•';
   position: absolute;
-  left: 0;
-  font-size: 1.4em;
-  line-height: 1.45;
+  top: -0.15em;
+  left: -0.05em;
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
   color: var(--color-text);
-  opacity: 0.75;
+  opacity: 0.08;
+  letter-spacing: -0.03em;
+  pointer-events: none;
 }
+
+.das-cafe__practical-line:nth-child(1)::before { content: '01'; }
+.das-cafe__practical-line:nth-child(2)::before { content: '02'; }
+.das-cafe__practical-line:nth-child(3)::before { content: '03'; }
 
 /* ─── Responsive ─────────────────────────────── */
 @media (max-width: 900px) {
@@ -159,24 +179,43 @@
     max-width: none;
   }
 
-  /* Mobile: Card-Kasten für Stichpunkte */
+  /* Mobile: Divider + Gruppe in Spalte 1 */
+  .das-cafe__practical-divider,
   .das-cafe__practical-group {
+    grid-column: 1;
+  }
+
+  .das-cafe__practical-divider {
+    margin: var(--space-sm) var(--space-md);
+    width: calc(100% - 2 * var(--space-md));
+  }
+
+  /* Mobile: Card-Kasten, 1 Spalte */
+  .das-cafe__practical-group {
+    grid-template-columns: 1fr;
+    gap: 0;
     background: rgba(49, 71, 83, 0.06);
     border-radius: 3px;
     padding: var(--space-md);
-    margin-top: var(--space-sm);
+    margin: 0 var(--space-md);
+    padding-bottom: var(--space-md);
   }
 
+  /* Mobile: Zahlen kleiner, Card bleibt */
   .das-cafe__practical-line {
-    padding-left: 1.4em;
-    padding-top: 0;
-    border-top: none;
-    margin-bottom: var(--space-xs);
-    text-align: left;
+    padding-left: 0;
+    padding-top: 2.5rem;
+    margin-bottom: var(--space-sm);
+    position: relative;
   }
 
   .das-cafe__practical-line:last-child {
     margin-bottom: 0;
+  }
+
+  .das-cafe__practical-line::before {
+    font-size: 2.5rem;
+    opacity: 0.1;
   }
 
 }

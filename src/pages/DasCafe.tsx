@@ -88,20 +88,21 @@ export function DasCafe() {
               Die Plätze sind begrenzt, manchmal teilt man den Tisch.
               Aus einem Nebeneinander wird manchmal ein Gespräch, manchmal eine Freundschaft.
             </BodyLine>
+          </div>
 
-            <div className="das-cafe__practical-divider" aria-hidden="true" />
+          {/* Trennlinie + Stichpunkte: eigene Grid-Zeile in Spalte 2 */}
+          <div className="das-cafe__practical-divider" aria-hidden="true" />
 
-            <div className="das-cafe__practical-group">
-              <PracticalLine delay={0}>
-                Vegetarisch &amp; vegan. Ohne Ausnahme.
-              </PracticalLine>
-              <PracticalLine delay={80}>
-                Keine Reservierung. Einfach reinkommen.
-              </PracticalLine>
-              <PracticalLine delay={160}>
-                Kein Catering. Wir bleiben, wo wir sind.
-              </PracticalLine>
-            </div>
+          <div className="das-cafe__practical-group">
+            <PracticalLine delay={0}>
+              Vegetarisch &amp; vegan. Ohne Ausnahme.
+            </PracticalLine>
+            <PracticalLine delay={80}>
+              Keine Reservierung. Einfach reinkommen.
+            </PracticalLine>
+            <PracticalLine delay={160}>
+              Kein Catering. Wir bleiben, wo wir sind.
+            </PracticalLine>
           </div>
         </div>
 
