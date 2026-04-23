@@ -138,7 +138,9 @@
   }
 
   .das-cafe__hero-text {
-    justify-content: flex-start;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
     padding: var(--space-lg) var(--space-md);
   }
 
