@@ -85,12 +85,20 @@ export function DasCafe() {
 
             <BodyLine delay={0}>
               Das Café ist ein kleiner Ort in Plauen – entstanden aus zwei Welten,
-              irgendwo zwischen Berlin und Olinda.
+              irgendwo zwischen Berlin und Olinda. Vor über zwanzig Jahren begann die
+              Geschichte in Brasilien, wo sich Junior und Anne-Kathrin kennenlernten.
             </BodyLine>
             <BodyLine delay={80}>
-              Eine kleine, kuratierte Auswahl. Frisch gemacht. Ohne Versprechen.
+              Dreizehn Jahre Berlin, ein erstes Café Olinda – dann das Vogtland.
+              Anne-Kathrin übernahm eine Zahnarztpraxis in Plauen, Junior brachte
+              das Café mit. Anfang 2024 öffnete es seine Türen, an Juniors Geburtstag.
             </BodyLine>
             <BodyLine delay={160}>
+              Die Möbel kommen größtenteils aus der Stadt, die Wände erzählen
+              von weiter her. Dazwischen: eine kleine, kuratierte Auswahl.
+              Frisch gemacht. Ohne Versprechen.
+            </BodyLine>
+            <BodyLine delay={240}>
               Die Plätze sind begrenzt, manchmal teilt man den Tisch.
               Aus einem Nebeneinander wird manchmal ein Gespräch, manchmal eine Freundschaft.
             </BodyLine>

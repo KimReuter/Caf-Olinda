@@ -58,6 +58,18 @@
   text-orientation: mixed;
 }
 
+/* ─── Kleines Label über der Headline ────────── */
+.home__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(247, 244, 239, 0.5);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1;
+}
+
 /* ─── Zeilenweise Display-Headline ────────────── */
 .home__headline {
   position: relative;
