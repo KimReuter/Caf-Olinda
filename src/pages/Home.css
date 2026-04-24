@@ -264,6 +264,17 @@
 
 /* ─── Responsive ─────────────────────────────── */
 @media (max-width: 900px) {
+  /* Parallax auf Mobile komplett deaktivieren */
+  .home__image {
+    inset: 0;
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .home__location {
+    display: none;
+  }
+
   .home__headline {
     padding: 0 var(--space-md) var(--space-md);
   }
