@@ -46,8 +46,9 @@ export function Home() {
     return () => { clearTimeout(t0); clearTimeout(tL); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
-  // Subtile Parallax
+  // Subtile Parallax – nur auf Desktop (kein Touch)
   useEffect(() => {
+    if (window.matchMedia('(hover: none)').matches) return;
     const handleScroll = () => {
       if (!imageRef.current) return;
       const y = window.scrollY * 0.025;
