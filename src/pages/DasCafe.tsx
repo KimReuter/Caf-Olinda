@@ -104,10 +104,14 @@ export function DasCafe() {
             </BodyLine>
           </div>
 
-          {/* Trennlinie + Stichpunkte: eigene Grid-Zeile in Spalte 2 */}
-          <div className="das-cafe__practical-divider" aria-hidden="true" />
+        </div>
 
-          <div className="das-cafe__practical-group">
+        {/* ─── Feature: Bild links randlos + Punkte rechts gestapelt ── */}
+        <div className="das-cafe__feature">
+          <div className="das-cafe__feature-image" aria-hidden="true">
+            {/* Bild eintragen: <img src="/das-cafe.jpg" alt="" className="das-cafe__feature-img" /> */}
+          </div>
+          <div className="das-cafe__feature-lines">
             <PracticalLine delay={0}>
               Vegetarisch &amp; vegan. Ohne Ausnahme.
             </PracticalLine>
@@ -118,16 +122,6 @@ export function DasCafe() {
               Kein Catering. Wir bleiben, wo wir sind.
             </PracticalLine>
           </div>
-        </div>
-
-        {/* ─── Atmosphäre-Bilder ─────────────────────────── */}
-        <div className="das-cafe__atmosphere" aria-hidden="true">
-          {/* Bild eintragen: src="/das-cafe-2.jpg" */}
-          <div className="das-cafe__atmosphere-item das-cafe__atmosphere-item--large" />
-          {/* Bild eintragen: src="/das-cafe-3.jpg" */}
-          <div className="das-cafe__atmosphere-item" />
-          {/* Bild eintragen: src="/das-cafe-4.jpg" */}
-          <div className="das-cafe__atmosphere-item" />
         </div>
 
       </div>

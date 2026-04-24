@@ -142,7 +142,7 @@ export function Home() {
               Alles vegetarisch, alles ohne Ausnahme.
             </p>
             <Link to="/speisekarte" className="home__teaser-link">
-              Zur Speisekarte
+              Zum Menü
             </Link>
           </div>
         </section>
