@@ -186,9 +186,10 @@
   }
 
   .das-cafe__hero-image {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: unset;
+    height: 50dvh;
+    min-height: unset;
     order: -1;
-    min-height: calc(260px + var(--nav-height));
   }
 
   .das-cafe__hero-text {
