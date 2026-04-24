@@ -125,7 +125,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  padding: var(--space-lg) var(--space-md) var(--space-md) var(--space-lg);
+  padding: var(--space-lg) var(--space-md) var(--space-md) clamp(var(--space-lg), 10vw, 12rem);
   align-items: start;
 }
 
@@ -138,7 +138,7 @@
   color: var(--color-muted);
   letter-spacing: 0.02em;
   max-width: none;
-  padding: clamp(6rem, 12vw, 14rem) var(--space-md) 0;
+  padding: clamp(4rem, 8vw, 10rem) var(--space-md) var(--space-sm);
   position: relative;
 }
 
@@ -151,7 +151,7 @@
 .das-cafe__practical-line::before {
   position: absolute;
   top: 0;
-  left: 0;
+  left: var(--space-md);
   font-family: var(--font-serif);
   font-size: clamp(8rem, 16vw, 20rem);
   font-weight: 400;
