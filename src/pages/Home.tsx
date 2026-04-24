@@ -141,7 +141,7 @@ export function Home() {
               und eine wechselnde Auswahl an Snacks und kleinen Gerichten.
               Alles vegetarisch, alles ohne Ausnahme.
             </p>
-            <Link to="/speisekarte" className="home__teaser-link">
+            <Link to="/menu" className="home__teaser-link">
               Zum Menü
             </Link>
           </div>
