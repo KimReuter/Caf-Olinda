@@ -120,6 +120,16 @@ export function DasCafe() {
           </div>
         </div>
 
+        {/* ─── Atmosphäre-Bilder ─────────────────────────── */}
+        <div className="das-cafe__atmosphere" aria-hidden="true">
+          {/* Bild eintragen: src="/das-cafe-2.jpg" */}
+          <div className="das-cafe__atmosphere-item das-cafe__atmosphere-item--large" />
+          {/* Bild eintragen: src="/das-cafe-3.jpg" */}
+          <div className="das-cafe__atmosphere-item" />
+          {/* Bild eintragen: src="/das-cafe-4.jpg" */}
+          <div className="das-cafe__atmosphere-item" />
+        </div>
+
       </div>
     </Layout>
   );

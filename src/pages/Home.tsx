@@ -1,6 +1,33 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/Layout/Layout';
+import { useInView } from '../hooks/useInView';
 import './Home.css';
+
+// ─── Pull-Quote ───────────────────────────────────────
+function Quote({
+  text,
+  author,
+  delay = 0,
+}: {
+  text: string;
+  author: string;
+  delay?: number;
+}) {
+  const { ref, isVisible } = useInView<HTMLQuoteElement>(0.15);
+  return (
+    // Echte Bewertungen hier eintragen
+    <blockquote
+      ref={ref}
+      className={`home__quote fade-up${isVisible ? ' is-visible' : ''}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      <span className="home__quote-mark" aria-hidden="true">„</span>
+      <p className="home__quote-text">{text}</p>
+      <footer className="home__quote-author">{author}</footer>
+    </blockquote>
+  );
+}
 
 export function Home() {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -29,6 +56,8 @@ export function Home() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const teaserInner = useInView<HTMLDivElement>(0.15);
 
   return (
     <Layout fullHeight>
@@ -60,6 +89,82 @@ export function Home() {
             </div>
           </div>
         </div>
+
+        {/* ─── Info-Leiste ─────────────────────────────── */}
+        <section className="home__info">
+          <div className="home__info-item">
+            <p className="home__info-label">Öffnungszeiten</p>
+            <p className="home__info-text">Di – Fr &nbsp;8 – 17 Uhr</p>
+            <p className="home__info-text">So &nbsp;9 – 15 Uhr</p>
+            <p className="home__info-note">Mo &amp; Sa geschlossen</p>
+          </div>
+          <div className="home__info-item">
+            <p className="home__info-label">Adresse</p>
+            <a
+              href="https://maps.google.com/?q=Stresemannstra%C3%9Fe+22,+08523+Plauen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home__info-link"
+            >
+              <p className="home__info-text">Stresemannstraße 22</p>
+              <p className="home__info-text">08523 Plauen</p>
+            </a>
+          </div>
+          <div className="home__info-item">
+            <p className="home__info-label">Küche</p>
+            <p className="home__info-text">Vegetarisch &amp; vegan.</p>
+            <p className="home__info-text">Täglich frisch.</p>
+          </div>
+        </section>
+
+        {/* ─── Atmosphäre-Grid ─────────────────────────── */}
+        <section className="home__gallery" aria-hidden="true">
+          {/* Bild hier eintragen: src='/gallery-1.jpg' */}
+          <div className="home__gallery-item home__gallery-item--large" />
+          {/* Bild hier eintragen: src='/gallery-2.jpg' */}
+          <div className="home__gallery-item" />
+          {/* Bild hier eintragen: src='/gallery-3.jpg' */}
+          <div className="home__gallery-item" />
+        </section>
+
+        {/* ─── Speisekarte-Teaser ───────────────────────── */}
+        <section className="home__teaser">
+          <div
+            ref={teaserInner.ref}
+            className={`home__teaser-inner fade-up${teaserInner.isVisible ? ' is-visible' : ''}`}
+          >
+            <p className="home__teaser-intro">
+              Brasilianisch. Vegetarisch. Täglich frisch.
+            </p>
+            <p className="home__teaser-body">
+              Espresso und Filterkaffee aus Brasilien, Pão de Queijo, Pastel de Nata —
+              und eine wechselnde Auswahl an Snacks und kleinen Gerichten.
+              Alles vegetarisch, alles ohne Ausnahme.
+            </p>
+            <Link to="/speisekarte" className="home__teaser-link">
+              Zur Speisekarte
+            </Link>
+          </div>
+        </section>
+
+        {/* ─── Zitate ───────────────────────────────────── */}
+        <section className="home__quotes">
+          <Quote
+            text="Ein Ort, an dem man sofort ankommen möchte. Der Kaffee ist außergewöhnlich gut."
+            author="Maria S."
+            delay={0}
+          />
+          <Quote
+            text="Sonntags unser Lieblingsplatz in Plauen. Man sitzt zusammen – das mag ich."
+            author="Thomas K."
+            delay={120}
+          />
+          <Quote
+            text="Das Pão de Queijo ist wirklich außergewöhnlich. Die Atmosphäre macht alles besonders."
+            author="Julia M."
+            delay={240}
+          />
+        </section>
       </div>
     </Layout>
   );
