@@ -165,27 +165,44 @@
 @media (max-width: 900px) {
   .footer__inner {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-lg) var(--space-md);
+    gap: var(--space-md);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .footer {
     padding: var(--space-sm) var(--space-md) 0;
+    margin-top: var(--space-sm);
   }
 
   .footer__inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md) var(--space-sm);
+  }
+
+  /* Brand: volle Breite oben */
+  .footer__col--brand {
+    grid-column: 1 / -1;
+  }
+
+  /* Nav-Spalte weglassen – ist schon im Header */
+  .footer__col:last-child {
+    display: none;
+  }
+
+  .footer__hours {
+    gap: 6px;
   }
 
   .footer__bottom {
+    padding: var(--space-xs) 0 var(--space-sm);
     flex-wrap: wrap;
     gap: var(--space-xs);
   }
 
   .footer__legal {
     margin-left: 0;
+    gap: var(--space-sm);
   }
 
   .footer__totop {
