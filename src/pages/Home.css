@@ -48,7 +48,7 @@
 .home__location {
   position: absolute;
   top: calc(var(--nav-height) + var(--space-md));
-  right: var(--space-lg);
+  right: var(--space-md);
   z-index: 2;
   font-family: var(--font-sans);
   font-size: var(--text-small);
