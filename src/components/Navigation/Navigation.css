@@ -86,27 +86,36 @@
 .nav__burger {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 6px;
-  padding: 4px;
-  width: 28px;
+  padding: 8px;
+  margin-left: auto;        /* schiebt Button nach rechts */
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
 }
 
 .nav__burger span {
   display: block;
-  height: 1px;
+  height: 1.5px;
+  width: 100%;
   background-color: var(--color-text);
+  border-radius: 1px;
   transition:
-    transform var(--duration-medium) var(--ease-quiet),
-    opacity var(--duration-medium) var(--ease-quiet),
-    width var(--duration-medium) var(--ease-quiet);
+    transform var(--duration-medium) var(--ease-out-soft),
+    opacity var(--duration-medium) var(--ease-quiet);
 }
 
+/* Offen: Burger → Kreuz */
 .nav__burger--open span:first-child {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(3.75px) rotate(45deg);
 }
 
 .nav__burger--open span:last-child {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-3.75px) rotate(-45deg);
 }
 
 /* Mobile Overlay */
@@ -120,12 +129,16 @@
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--duration-medium) var(--ease-quiet);
+  transform: translateY(-8px);
+  transition:
+    opacity var(--duration-medium) var(--ease-out-soft),
+    transform var(--duration-medium) var(--ease-out-soft);
 }
 
 .nav__overlay--open {
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(0);
 }
 
 .nav__overlay-links {
@@ -142,15 +155,18 @@
   font-weight: 400;
   color: var(--color-text);
   opacity: 0.55;
-  transition: opacity var(--duration-fast) var(--ease-quiet);
+  transition:
+    opacity var(--duration-fast) var(--ease-quiet),
+    letter-spacing var(--duration-medium) var(--ease-quiet);
 }
 
-.nav__overlay-link:hover,
+.nav__overlay-link:hover {
+  opacity: 1;
+  letter-spacing: 0.02em;
+}
+
 .nav__overlay-link--active {
   opacity: 1;
-}
-
-.nav__overlay-link--active {
   color: var(--color-accent);
 }
 

@@ -28,7 +28,7 @@ export function Navigation() {
   }, [menuOpen]);
 
   return (
-    <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`} aria-label="Hauptnavigation">
+    <nav className={`nav${scrolled || menuOpen ? ' nav--scrolled' : ''}`} aria-label="Hauptnavigation">
       <div className="nav__inner">
         <NavLink to="/" className="nav__wordmark" aria-label="Café Olinda – Startseite">
           Café Olinda
