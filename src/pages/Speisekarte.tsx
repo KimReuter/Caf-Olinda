@@ -8,7 +8,7 @@ const highlights = [
   { id: 'coldbrew',            name: 'Coldbrew',                   category: 'Cold',     imageSrc: '' },
   { id: 'pastel-de-nata',      name: 'Pastel de Nata',             category: 'Gebäck',   imageSrc: '' },
   { id: 'saft',                name: 'Frisch gepresster Saft',     category: 'Kalt',     imageSrc: '' },
-  { id: 'mascarpone-maracuja', name: 'Mascarpone-Maracuja-Kuchen', category: 'Gebäck',   imageSrc: '' },
+  { id: 'mascarpone-maracuja', name: 'Mascarpone Kuchen',         category: 'Gebäck',   imageSrc: '' },
   { id: 'bagel',               name: 'Bagel',                      category: 'Herzhaft', imageSrc: '' },
 ];
 
@@ -40,7 +40,7 @@ const overview = [
   },
   {
     label: 'Süßes Gebäck',
-    items: 'Pastel de Nata · Mascarpone-Maracuja-Kuchen · Pão de Mel · Schokocroissant',
+    items: 'Pastel de Nata · Mascarpone Kuchen · Pão de Mel · Schokocroissant',
   },
 ];
 
@@ -84,8 +84,8 @@ export function Speisekarte() {
   return (
     <Layout>
       <div className="speisekarte">
-        <div className="speisekarte__inner">
 
+        <div className="speisekarte__inner">
           <header className="speisekarte__header">
             <h1
               ref={headRef}
@@ -94,21 +94,23 @@ export function Speisekarte() {
               Menü
             </h1>
           </header>
+        </div>
 
-          {/* Bento-Grid */}
-          <div className="speisekarte__grid">
-            {highlights.map((item, i) => (
-              <HighlightCard
-                key={item.id}
-                name={item.name}
-                category={item.category}
-                imageSrc={item.imageSrc}
-                index={i}
-                delay={i * 60}
-              />
-            ))}
-          </div>
+        {/* Bento-Grid – außerhalb des max-width Containers, blutet zu beiden Rändern */}
+        <div className="speisekarte__grid">
+          {highlights.map((item, i) => (
+            <HighlightCard
+              key={item.id}
+              name={item.name}
+              category={item.category}
+              imageSrc={item.imageSrc}
+              index={i}
+              delay={i * 60}
+            />
+          ))}
+        </div>
 
+        <div className="speisekarte__inner">
           {/* Übersicht */}
           <div className="speisekarte__overview-section">
             <h2
@@ -128,8 +130,8 @@ export function Speisekarte() {
               ))}
             </div>
           </div>
-
         </div>
+
       </div>
     </Layout>
   );

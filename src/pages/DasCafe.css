@@ -149,28 +149,27 @@
   line-height: 1.7;
   color: var(--color-muted);
   letter-spacing: 0.02em;
-  padding: clamp(4rem, 8vw, 10rem) var(--space-md) var(--space-sm);
-  position: relative;
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  max-width: none;
   flex: 1;
+  border-top: 1px solid rgba(26, 26, 24, 0.1);
 }
 
-/* Zweites Item: leichter Versatz für Rhythmus */
 .das-cafe__practical-line:nth-child(2) {
-  margin-top: clamp(2rem, 4vw, 5rem);
+  margin-top: 0;
 }
 
-/* Große blasse Ordnungszahl */
+/* Ordnungszahl als Kapitelmarke über dem Text */
 .das-cafe__practical-line::before {
-  position: absolute;
-  top: 0;
-  left: var(--space-md);
+  display: block;
   font-family: var(--font-serif);
-  font-size: clamp(8rem, 16vw, 20rem);
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
   font-weight: 400;
+  letter-spacing: -0.03em;
   line-height: 1;
+  opacity: 0.2;
   color: var(--color-text);
-  opacity: 0.06;
-  letter-spacing: -0.04em;
+  margin-bottom: 0.65em;
   pointer-events: none;
 }
 
@@ -223,18 +222,23 @@
     aspect-ratio: 3 / 2;
   }
 
-  /* Mobile: Punkte als Card */
+  /* Mobile: Punkte – editorialer Stack */
   .das-cafe__feature-lines {
-    background: rgba(49, 71, 83, 0.06);
-    border-radius: 3px;
-    padding: var(--space-md);
-    margin: var(--space-sm) var(--space-md);
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(26, 26, 24, 0.1);
   }
 
   .das-cafe__practical-line {
-    padding: 2.5rem var(--space-sm) 0;
-    margin-bottom: var(--space-sm);
+    display: block;
+    padding: var(--space-lg) var(--space-md) var(--space-md);
+    border-top: none;
+    border-bottom: 1px solid rgba(26, 26, 24, 0.1);
     flex: none;
+    position: relative;
+    text-align: center;
   }
 
   .das-cafe__practical-line:nth-child(2) {
@@ -242,17 +246,30 @@
   }
 
   .das-cafe__practical-line:last-child {
-    margin-bottom: 0;
+    border-bottom: none;
   }
 
+  /* Ordnungszahl als Kapitelmarke über dem Text */
   .das-cafe__practical-line::before {
-    left: var(--space-sm);
-    font-size: 3rem;
-    opacity: 0.1;
+    position: static;
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 9vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    opacity: 0.2;
+    color: var(--color-text);
+    margin-bottom: 0.65em;
+    pointer-events: none;
   }
 }
 
 @media (max-width: 640px) {
+  .das-cafe__practical-line {
+    text-align: right;
+  }
+
   .das-cafe__body {
     padding: var(--space-lg) 0;
   }

@@ -2,7 +2,7 @@
 .footer {
   border-top: 1px solid rgba(26, 26, 24, 0.1);
   padding: 3rem var(--space-md) 0;
-  margin-top: var(--space-md);
+  margin-top: 0;
 }
 
 /* ─── Vier-Spalten-Grid ──────────────────────── */
@@ -171,8 +171,7 @@
 
 @media (max-width: 640px) {
   .footer {
-    padding: var(--space-sm) var(--space-md) 0;
-    margin-top: var(--space-sm);
+    padding: var(--space-lg) var(--space-md) 0;
   }
 
   .footer__inner {
