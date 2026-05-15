@@ -71,10 +71,7 @@ export function Home() {
           />
           <div className="home__overlay" aria-hidden="true" />
 
-          {/* Kleines Gegengewicht oben rechts */}
-          <span className="home__location" aria-hidden="true">Plauen · Vogtland</span>
-
-          <div className="home__headline">
+<div className="home__headline">
             <p className={`home__label fade-in${label ? ' is-visible' : ''}`}>
               Ein Wohnzimmer für die Stadt.
             </p>
