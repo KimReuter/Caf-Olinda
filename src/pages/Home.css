@@ -397,14 +397,14 @@
   .home__intro-statement {
     grid-column: 2;
     grid-row: 1;
-    padding: 0 var(--space-md) 0 var(--space-sm);
+    padding: 0 var(--space-md) 0 0;
     text-align: left;
   }
 
   .home__intro-body {
     grid-column: 1;
     grid-row: 2;
-    padding: 0 var(--space-sm) 0 var(--space-md);
+    padding: 0 0 0 var(--space-md);
     align-items: flex-end;
     gap: 0;
   }
@@ -418,7 +418,7 @@
     grid-column: 2;
     grid-row: 3;
     justify-self: start;
-    padding: 0 var(--space-md) 0 var(--space-sm);
+    padding: 0 var(--space-md) 0 0;
     align-self: start;
   }
 
