@@ -114,25 +114,21 @@ export function Home() {
           </div>
         </section>
 
-        {/* ─── Statement + Teaser ──────────────────────── */}
-        <section className="home__statement">
-          <p className="home__statement-text">
-            Brasilianisch. Vegetarisch. Täglich frisch.
+        {/* ─── Editorial Intro ─────────────────────────── */}
+        <section className="home__intro">
+          <p className="home__intro-statement">
+            Brasilianisch.<br />Vegetarisch.<br />Täglich frisch.
           </p>
-        </section>
-
-        {/* ─── Speisekarte-Teaser ───────────────────────── */}
-        <section className="home__teaser">
           <div
             ref={teaserInner.ref}
-            className={`home__teaser-inner fade-up${teaserInner.isVisible ? ' is-visible' : ''}`}
+            className={`home__intro-body fade-up${teaserInner.isVisible ? ' is-visible' : ''}`}
           >
-            <p className="home__teaser-body">
+            <p className="home__intro-text">
               Espresso und Filterkaffee aus Brasilien, Pão de Queijo, Pastel de Nata —
               und eine wechselnde Auswahl an Snacks und kleinen Gerichten.
               Alles vegetarisch, alles ohne Ausnahme.
             </p>
-            <Link to="/menu" className="home__teaser-link">
+            <Link to="/menu" className="home__intro-link">
               Zum Menü
             </Link>
           </div>

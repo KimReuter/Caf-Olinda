@@ -181,23 +181,59 @@
   display: block;
 }
 
-/* ─── Statement ─────────────────────────────── */
-.home__statement {
+/* ─── Editorial Intro ────────────────────────── */
+.home__intro {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-2xl);
   padding: var(--space-xl) var(--space-md);
   border-top: 1px solid rgba(26, 26, 24, 0.08);
-  text-align: center;
+  align-items: end;
 }
 
-.home__statement-text {
+.home__intro-statement {
   font-family: var(--font-serif);
-  font-size: clamp(var(--text-xl), 3.5vw, var(--text-2xl));
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-style: italic;
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   color: var(--color-text);
-  margin: 0 auto;
+  margin: 0;
   max-width: none;
+}
+
+.home__intro-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.home__intro-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin: 0;
+  max-width: none;
+}
+
+.home__intro-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 26, 24, 0.25);
+  padding-bottom: 2px;
+  transition: color 250ms ease, border-color 250ms ease;
+  align-self: flex-start;
+}
+
+.home__intro-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 /* ─── 3 Café-Punkte ──────────────────────────── */
@@ -241,55 +277,6 @@
   max-width: none;
 }
 
-/* ─── Speisekarte-Teaser ─────────────────────── */
-.home__teaser {
-  display: grid;
-  grid-template-columns: 44% 1fr;
-  padding: var(--space-xl) 0;
-  border-top: 1px solid rgba(26, 26, 24, 0.08);
-}
-
-.home__teaser-inner {
-  grid-column: 2;
-  max-width: 50%;
-}
-
-.home__teaser-intro {
-  font-family: var(--font-serif);
-  font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--color-text);
-  margin: 0 0 var(--space-md) 0;
-}
-
-.home__teaser-body {
-  font-family: var(--font-sans);
-  font-size: var(--text-body);
-  font-weight: 400;
-  line-height: 1.75;
-  color: var(--color-text);
-  text-align: justify;
-  margin: 0 0 var(--space-md) 0;
-}
-
-.home__teaser-link {
-  font-family: var(--font-sans);
-  font-size: var(--text-small);
-  letter-spacing: 0.1em;
-  color: var(--color-text);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(26, 26, 24, 0.25);
-  padding-bottom: 2px;
-  transition: color 250ms ease, border-color 250ms ease;
-}
-
-.home__teaser-link:hover {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
 
 /* ─── Zitate ──────────────────────────────────── */
 .home__quotes {
@@ -387,14 +374,10 @@
     grid-row: 2;
   }
 
-  .home__teaser {
+  .home__intro {
     grid-template-columns: 1fr;
-  }
-
-  .home__teaser-inner {
-    grid-column: 1;
-    padding: 0 var(--space-md);
-    max-width: none;
+    gap: var(--space-lg);
+    align-items: start;
   }
 
   .home__rules {
