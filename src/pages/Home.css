@@ -22,7 +22,7 @@
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
-  transform: scale(1.12) translateY(0);
+  transform: scale(1.0) translateY(0);
   opacity: 0;
   transition: opacity 1200ms var(--ease-quiet);
   will-change: transform;

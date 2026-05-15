@@ -52,8 +52,10 @@ export function Home() {
     const handleScroll = () => {
       rafId = requestAnimationFrame(() => {
         if (!imageRef.current) return;
-        const y = window.scrollY * 0.2;
-        imageRef.current.style.transform = `scale(1.12) translateY(${y}px)`;
+        const s = window.scrollY;
+        const y = s * 0.18;
+        const scale = 1 + s * 0.00025;
+        imageRef.current.style.transform = `scale(${scale}) translateY(${y}px)`;
       });
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
