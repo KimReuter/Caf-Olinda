@@ -393,11 +393,7 @@
 
   .home__intro-body {
     padding: 0 var(--space-md);
-    align-items: flex-start;
-  }
-
-  .home__intro-link {
-    align-self: center;
+    align-items: center;
   }
 
   .home__intro-text {
@@ -432,6 +428,10 @@
 @media (max-width: 640px) {
   .home__intro-text {
     max-width: none;
+  }
+
+  .home__intro-body {
+    align-items: flex-start;
   }
 }
 
