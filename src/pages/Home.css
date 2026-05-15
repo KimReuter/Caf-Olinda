@@ -402,7 +402,7 @@
 
   .home__intro-text {
     text-align: justify;
-    max-width: none;
+    max-width: 52%;
   }
 
   .home__rules {
@@ -425,6 +425,12 @@
   }
 
   .home__quote-text {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .home__intro-text {
     max-width: none;
   }
 }
