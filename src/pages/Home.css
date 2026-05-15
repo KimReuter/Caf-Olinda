@@ -229,6 +229,10 @@
 }
 
 .home__intro-link {
+  grid-column: 1;
+  justify-self: end;
+  display: block;
+  width: fit-content;
   font-family: var(--font-sans);
   font-size: var(--text-small);
   letter-spacing: 0.1em;
@@ -236,6 +240,7 @@
   text-decoration: none;
   border-bottom: 1px solid rgba(26, 26, 24, 0.25);
   padding-bottom: 2px;
+  padding-left: var(--space-md);
   transition: color 250ms ease, border-color 250ms ease;
 }
 
@@ -381,24 +386,39 @@
   }
 
   .home__intro {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0;
     row-gap: var(--space-md);
     padding: var(--space-lg) 0;
+    align-items: start;
   }
 
   .home__intro-statement {
-    padding: 0 var(--space-md);
-    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 var(--space-md) 0 var(--space-sm);
+    text-align: left;
   }
 
   .home__intro-body {
-    padding: 0 var(--space-md);
-    align-items: center;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    padding: 0 var(--space-sm) 0 var(--space-md);
+    align-items: flex-end;
+    gap: 0;
   }
 
   .home__intro-text {
-    text-align: justify;
-    max-width: 52%;
+    text-align: right;
+    max-width: none;
+  }
+
+  .home__intro-link {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    padding: 0 var(--space-md) 0 var(--space-sm);
+    align-self: end;
   }
 
   .home__rules {
@@ -426,12 +446,36 @@
 }
 
 @media (max-width: 640px) {
-  .home__intro-text {
-    max-width: none;
+  .home__intro {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-md);
+  }
+
+  .home__intro-statement {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 var(--space-md);
+    text-align: center;
   }
 
   .home__intro-body {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0 var(--space-md);
     align-items: flex-start;
+  }
+
+  .home__intro-text {
+    text-align: justify;
+    max-width: none;
+  }
+
+  .home__intro-link {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: center;
+    padding: 0;
+    align-self: auto;
   }
 }
 

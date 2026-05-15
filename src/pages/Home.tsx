@@ -135,10 +135,10 @@ export function Home() {
               Dazu frisch gepresste Säfte und brasilianische Classics.
               Mehr braucht eine entspannte Auszeit nicht.
             </p>
-            <Link to="/menu" className="home__intro-link">
-              Zum Menü
-            </Link>
           </div>
+          <Link to="/menu" className="home__intro-link">
+            Zum Menü
+          </Link>
         </section>
 
         {/* ─── Atmosphäre-Grid ─────────────────────────── */}
