@@ -124,9 +124,9 @@ export function Home() {
             className={`home__intro-body fade-up${teaserInner.isVisible ? ' is-visible' : ''}`}
           >
             <p className="home__intro-text">
-              Espresso und Filterkaffee aus Brasilien, Pão de Queijo, Pastel de Nata —
-              und eine wechselnde Auswahl an Snacks und kleinen Gerichten.
-              Alles vegetarisch, alles ohne Ausnahme.
+              Guter Kaffee, süßes Gebäck, vielleicht ein warmer Bagel mit Räuchertofu.
+              Dazu frisch gepresste Säfte und brasilianische Classics.
+              Mehr braucht eine entspannte Auszeit nicht.
             </p>
             <Link to="/menu" className="home__intro-link">
               Zum Menü
