@@ -45,16 +45,22 @@ export function Home() {
     return () => { clearTimeout(t0); clearTimeout(tL); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
-  // Subtile Parallax – nur auf Desktop
+  // Parallax – nur auf Desktop
   useEffect(() => {
     if (window.innerWidth <= 900) return;
+    let rafId: number;
     const handleScroll = () => {
-      if (!imageRef.current) return;
-      const y = window.scrollY * 0.025;
-      imageRef.current.style.transform = `scale(1.04) translateY(${y}px)`;
+      rafId = requestAnimationFrame(() => {
+        if (!imageRef.current) return;
+        const y = window.scrollY * 0.2;
+        imageRef.current.style.transform = `scale(1.12) translateY(${y}px)`;
+      });
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const teaserInner = useInView<HTMLDivElement>(0.15);
