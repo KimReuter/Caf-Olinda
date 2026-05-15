@@ -22,7 +22,6 @@ function Quote({
       className={`home__quote fade-up${isVisible ? ' is-visible' : ''}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <span className="home__quote-mark" aria-hidden="true">„</span>
       <p className="home__quote-text">{text}</p>
       <footer className="home__quote-author">{author}</footer>
     </blockquote>

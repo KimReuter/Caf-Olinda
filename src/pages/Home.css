@@ -286,47 +286,46 @@
 
 /* ─── Zitate ──────────────────────────────────── */
 .home__quotes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid rgba(26, 26, 24, 0.08);
-  padding: 0 0 var(--space-xl);
+  padding-bottom: var(--space-xl);
 }
 
 .home__quote {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xl);
   padding: var(--space-lg) var(--space-md);
-  border-right: 1px solid rgba(26, 26, 24, 0.08);
+  border-bottom: 1px solid rgba(26, 26, 24, 0.08);
   margin: 0;
 }
 
 .home__quote:last-child {
-  border-right: none;
-}
-
-.home__quote-mark {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 5rem;
-  line-height: 0.7;
-  color: var(--color-accent);
-  opacity: 0.2;
-  margin-bottom: var(--space-sm);
+  border-bottom: none;
 }
 
 .home__quote-text {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: var(--text-xl);
-  line-height: 1.45;
+  font-size: clamp(var(--text-lg), 2.2vw, var(--text-xl));
+  line-height: 1.35;
   color: var(--color-text);
-  margin: 0 0 var(--space-sm) 0;
+  margin: 0;
+  max-width: 74%;
 }
 
 .home__quote-author {
   font-family: var(--font-sans);
   font-size: var(--text-small);
   color: var(--color-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   font-style: normal;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.home__quote-author::before {
+  content: '— ';
 }
 
 /* ─── Responsive ─────────────────────────────── */
@@ -380,17 +379,14 @@
     max-width: none;
   }
 
-  .home__quotes {
-    grid-template-columns: 1fr;
-  }
-
   .home__quote {
-    border-right: none;
-    border-bottom: 1px solid rgba(26, 26, 24, 0.08);
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: flex-start;
   }
 
-  .home__quote:last-child {
-    border-bottom: none;
+  .home__quote-text {
+    max-width: none;
   }
 }
 
