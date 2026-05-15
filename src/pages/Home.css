@@ -397,7 +397,7 @@
   }
 
   .home__intro-link {
-    margin-left: calc(50vw - var(--space-md));
+    align-self: center;
   }
 
   .home__intro-text {
