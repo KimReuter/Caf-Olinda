@@ -207,6 +207,7 @@
 .home__rule {
   padding: var(--space-lg) var(--space-md) var(--space-xl);
   border-right: 1px solid rgba(26, 26, 24, 0.08);
+  text-align: center;
 }
 
 .home__rule:last-child {
