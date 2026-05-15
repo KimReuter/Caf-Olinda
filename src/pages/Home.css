@@ -240,7 +240,6 @@
   text-decoration: none;
   border-bottom: 1px solid rgba(26, 26, 24, 0.25);
   padding-bottom: 1px;
-  padding-left: var(--space-md);
   transition: color 250ms ease, border-color 250ms ease;
 }
 
