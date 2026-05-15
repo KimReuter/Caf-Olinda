@@ -239,7 +239,7 @@
   color: var(--color-text);
   text-decoration: none;
   border-bottom: 1px solid rgba(26, 26, 24, 0.25);
-  padding-bottom: 2px;
+  padding-bottom: 1px;
   padding-left: var(--space-md);
   transition: color 250ms ease, border-color 250ms ease;
 }
@@ -388,6 +388,7 @@
   .home__intro {
     grid-template-columns: 1fr 1fr;
     column-gap: 0;
+    grid-template-rows: auto auto auto;
     row-gap: var(--space-md);
     padding: var(--space-lg) 0;
     align-items: start;
@@ -402,7 +403,7 @@
 
   .home__intro-body {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
     padding: 0 var(--space-sm) 0 var(--space-md);
     align-items: flex-end;
     gap: 0;
@@ -414,10 +415,10 @@
   }
 
   .home__intro-link {
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: center;
-    padding: 0 0 2px 0;
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    padding: 0 var(--space-md) 0 var(--space-sm);
     align-self: start;
   }
 
