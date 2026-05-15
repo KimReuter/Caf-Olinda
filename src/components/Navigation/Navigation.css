@@ -33,7 +33,9 @@
   font-weight: 400;
   letter-spacing: 0.01em;
   color: var(--color-text);
-  transition: opacity var(--duration-fast) var(--ease-quiet);
+  transition:
+    opacity var(--duration-fast) var(--ease-quiet),
+    color var(--duration-medium) var(--ease-quiet);
 }
 
 .nav__wordmark:hover {
@@ -57,7 +59,8 @@
   opacity: 0.65;
   transition:
     opacity var(--duration-fast) var(--ease-quiet),
-    letter-spacing var(--duration-medium) var(--ease-quiet);
+    letter-spacing var(--duration-medium) var(--ease-quiet),
+    color var(--duration-medium) var(--ease-quiet);
 }
 
 .nav__link:hover {
@@ -106,7 +109,8 @@
   border-radius: 1px;
   transition:
     transform var(--duration-medium) var(--ease-out-soft),
-    opacity var(--duration-medium) var(--ease-quiet);
+    opacity var(--duration-medium) var(--ease-quiet),
+    background-color var(--duration-medium) var(--ease-quiet);
 }
 
 /* Offen: Burger → Kreuz */
@@ -168,6 +172,27 @@
 .nav__overlay-link--active {
   opacity: 1;
   color: var(--color-accent);
+}
+
+/* ─── Hero-Modus: weißer Text auf transparenter Nav ── */
+.nav--hero .nav__wordmark {
+  color: rgba(247, 244, 239, 0.92);
+}
+
+.nav--hero .nav__link {
+  color: rgba(247, 244, 239, 0.75);
+}
+
+.nav--hero .nav__link--active {
+  color: rgba(247, 244, 239, 1);
+}
+
+.nav--hero .nav__link--active::after {
+  background-color: rgba(247, 244, 239, 0.5);
+}
+
+.nav--hero .nav__burger span {
+  background-color: rgba(247, 244, 239, 0.9);
 }
 
 /* Responsive */
