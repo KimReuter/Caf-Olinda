@@ -396,6 +396,10 @@
     align-items: flex-start;
   }
 
+  .home__intro-link {
+    margin-left: calc(50vw - var(--space-md));
+  }
+
   .home__intro-text {
     text-align: justify;
     max-width: none;
