@@ -74,13 +74,19 @@
 .home__headline {
   position: relative;
   z-index: 2;
-  padding: 0 var(--space-lg) var(--space-lg);
+  padding: 0 var(--space-lg) var(--space-lg) var(--space-md);
   font-family: var(--font-serif);
   font-size: var(--text-display);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--color-bg);
+}
+
+@media (min-width: 1165px) {
+  .home__headline {
+    padding-left: calc((100vw - var(--max-width)) / 2);
+  }
 }
 
 .home__headline .line-wrap {
@@ -102,6 +108,7 @@
 .home__info-item {
   padding: var(--space-lg) var(--space-md);
   border-right: 1px solid rgba(26, 26, 24, 0.08);
+  text-align: center;
 }
 
 .home__info-item:last-child {
@@ -115,6 +122,7 @@
   text-transform: uppercase;
   color: var(--color-accent);
   margin: 0 0 var(--space-sm) 0;
+  max-width: none;
 }
 
 .home__info-text {
@@ -123,6 +131,7 @@
   color: var(--color-text);
   line-height: 1.7;
   margin: 0;
+  max-width: none;
 }
 
 .home__info-note {
@@ -130,9 +139,11 @@
   font-size: var(--text-small);
   color: var(--color-muted);
   margin: 0.4em 0 0 0;
+  max-width: none;
 }
 
 .home__info-link {
+  display: block;
   text-decoration: none;
   color: inherit;
   transition: color 250ms ease;
@@ -165,6 +176,62 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* ─── Statement ─────────────────────────────── */
+.home__statement {
+  padding: var(--space-xl) var(--space-md);
+  border-top: 1px solid rgba(26, 26, 24, 0.08);
+  text-align: center;
+}
+
+.home__statement-text {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-xl), 3.5vw, var(--text-2xl));
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0 auto;
+  max-width: none;
+}
+
+/* ─── 3 Café-Punkte ──────────────────────────── */
+.home__rules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(26, 26, 24, 0.08);
+}
+
+.home__rule {
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  border-right: 1px solid rgba(26, 26, 24, 0.08);
+}
+
+.home__rule:last-child {
+  border-right: none;
+}
+
+.home__rule-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  opacity: 0.15;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.home__rule-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+  max-width: none;
 }
 
 /* ─── Speisekarte-Teaser ─────────────────────── */
@@ -286,7 +353,8 @@
   .home__info-item {
     border-right: none;
     border-bottom: 1px solid rgba(26, 26, 24, 0.08);
-    padding: var(--space-md);
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
   }
 
   .home__info-item:last-child {

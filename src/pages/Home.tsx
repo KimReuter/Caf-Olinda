@@ -118,6 +118,30 @@ export function Home() {
           </div>
         </section>
 
+        {/* ─── Statement + Teaser ──────────────────────── */}
+        <section className="home__statement">
+          <p className="home__statement-text">
+            Brasilianisch. Vegetarisch. Täglich frisch.
+          </p>
+        </section>
+
+        {/* ─── Speisekarte-Teaser ───────────────────────── */}
+        <section className="home__teaser">
+          <div
+            ref={teaserInner.ref}
+            className={`home__teaser-inner fade-up${teaserInner.isVisible ? ' is-visible' : ''}`}
+          >
+            <p className="home__teaser-body">
+              Espresso und Filterkaffee aus Brasilien, Pão de Queijo, Pastel de Nata —
+              und eine wechselnde Auswahl an Snacks und kleinen Gerichten.
+              Alles vegetarisch, alles ohne Ausnahme.
+            </p>
+            <Link to="/menu" className="home__teaser-link">
+              Zum Menü
+            </Link>
+          </div>
+        </section>
+
         {/* ─── Atmosphäre-Grid ─────────────────────────── */}
         <section className="home__gallery" aria-hidden="true">
           {/* Bild hier eintragen: src='/gallery-1.jpg' */}
@@ -128,23 +152,19 @@ export function Home() {
           <div className="home__gallery-item" />
         </section>
 
-        {/* ─── Speisekarte-Teaser ───────────────────────── */}
-        <section className="home__teaser">
-          <div
-            ref={teaserInner.ref}
-            className={`home__teaser-inner fade-up${teaserInner.isVisible ? ' is-visible' : ''}`}
-          >
-            <p className="home__teaser-intro">
-              Brasilianisch. Vegetarisch. Täglich frisch.
-            </p>
-            <p className="home__teaser-body">
-              Espresso und Filterkaffee aus Brasilien, Pão de Queijo, Pastel de Nata —
-              und eine wechselnde Auswahl an Snacks und kleinen Gerichten.
-              Alles vegetarisch, alles ohne Ausnahme.
-            </p>
-            <Link to="/menu" className="home__teaser-link">
-              Zum Menü
-            </Link>
+        {/* ─── 3 Café-Punkte ───────────────────────────── */}
+        <section className="home__rules">
+          <div className="home__rule">
+            <span className="home__rule-number">01</span>
+            <p className="home__rule-text">Vegetarisch &amp; vegan. Ohne Ausnahme.</p>
+          </div>
+          <div className="home__rule">
+            <span className="home__rule-number">02</span>
+            <p className="home__rule-text">Keine Reservierung. Einfach reinkommen.</p>
+          </div>
+          <div className="home__rule">
+            <span className="home__rule-number">03</span>
+            <p className="home__rule-text">Kein Catering. Wir bleiben, wo wir sind.</p>
           </div>
         </section>
 
