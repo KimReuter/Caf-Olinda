@@ -156,7 +156,7 @@
 /* ─── Atmosphäre-Grid ────────────────────────── */
 .home__gallery {
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 45vh 30vh;
   gap: 2px;
   background: rgba(26, 26, 24, 0.04);
