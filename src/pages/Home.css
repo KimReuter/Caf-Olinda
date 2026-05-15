@@ -334,9 +334,7 @@
 @media (max-width: 900px) {
   /* Parallax auf Mobile komplett deaktivieren */
   .home__image {
-    inset: 0;
-    transform: none !important;
-    will-change: auto;
+    inset: -12%;
   }
 
   .home__location {

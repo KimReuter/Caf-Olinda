@@ -45,9 +45,8 @@ export function Home() {
     return () => { clearTimeout(t0); clearTimeout(tL); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
-  // Parallax – nur auf Desktop
+  // Parallax + Zoom
   useEffect(() => {
-    if (window.innerWidth <= 900) return;
     let rafId: number;
     const handleScroll = () => {
       rafId = requestAnimationFrame(() => {
