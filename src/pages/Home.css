@@ -224,7 +224,7 @@
   color: var(--color-text);
   text-align: right;
   margin: 0;
-  max-width: none;
+  max-width: 50%;
 }
 
 .home__intro-link {
@@ -399,6 +399,7 @@
 
   .home__intro-text {
     text-align: left;
+    max-width: none;
   }
 
   .home__rules {
