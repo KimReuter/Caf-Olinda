@@ -383,21 +383,21 @@
   .home__intro {
     grid-template-columns: 1fr;
     row-gap: var(--space-md);
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
   }
 
   .home__intro-statement {
-    padding-left: var(--space-md);
-    text-align: left;
+    padding: 0 var(--space-md);
+    text-align: center;
   }
 
   .home__intro-body {
-    padding: 0 0 var(--space-lg) var(--space-md);
+    padding: 0 var(--space-md);
     align-items: flex-start;
   }
 
   .home__intro-text {
-    text-align: left;
+    text-align: justify;
     max-width: none;
   }
 
